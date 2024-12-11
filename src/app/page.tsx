@@ -3,8 +3,8 @@
 import { useState } from 'react';
 
 export default function Home() {
-    const [tasks, setTasks] = useState([]);
-    const [input, setInput] = useState('');
+    const [tasks, setTasks] = useState<string[]>([]); // 型を指定
+    const [input, setInput] = useState<string>(''); // 型を指定
 
     const addTask = () => {
         if (input.trim()) {
@@ -13,7 +13,7 @@ export default function Home() {
         }
     };
 
-    const removeTask = (index) => {
+    const removeTask = (index: number) => {
         setTasks(tasks.filter((_, i) => i !== index));
     };
 
